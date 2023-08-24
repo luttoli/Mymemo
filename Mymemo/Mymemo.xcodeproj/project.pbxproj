@@ -17,7 +17,6 @@
 		B8A0EDC52A95E8BA000D3871 /* MymemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EDC42A95E8BA000D3871 /* MymemoUITests.swift */; };
 		B8A0EDC72A95E8BA000D3871 /* MymemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EDC62A95E8BA000D3871 /* MymemoUITestsLaunchTests.swift */; };
 		B8A0EE142A95F9C8000D3871 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE132A95F9C8000D3871 /* MemoData.swift */; };
-		B8A0EE1D2A9653A8000D3871 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE1C2A9653A8000D3871 /* ImageData.swift */; };
 		B8A0EE202A96F211000D3871 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE1F2A96F211000D3871 /* TodoViewController.swift */; };
 		B8A0EE222A96F21A000D3871 /* DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE212A96F21A000D3871 /* DoneViewController.swift */; };
 		B8A0EE242A96F224000D3871 /* AnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE232A96F224000D3871 /* AnimalViewController.swift */; };
@@ -55,7 +54,6 @@
 		B8A0EDC42A95E8BA000D3871 /* MymemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MymemoUITests.swift; sourceTree = "<group>"; };
 		B8A0EDC62A95E8BA000D3871 /* MymemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MymemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B8A0EE132A95F9C8000D3871 /* MemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
-		B8A0EE1C2A9653A8000D3871 /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
 		B8A0EE1F2A96F211000D3871 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		B8A0EE212A96F21A000D3871 /* DoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneViewController.swift; sourceTree = "<group>"; };
 		B8A0EE232A96F224000D3871 /* AnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewController.swift; sourceTree = "<group>"; };
@@ -142,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				B8A0EE132A95F9C8000D3871 /* MemoData.swift */,
-				B8A0EE1C2A9653A8000D3871 /* ImageData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -328,7 +325,6 @@
 				B8A0EDA12A95E8B9000D3871 /* AppDelegate.swift in Sources */,
 				B8A0EDA32A95E8B9000D3871 /* SceneDelegate.swift in Sources */,
 				B8A0EDAB2A95E8B9000D3871 /* Mymemo.xcdatamodeld in Sources */,
-				B8A0EE1D2A9653A8000D3871 /* ImageData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

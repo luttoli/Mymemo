@@ -10,6 +10,15 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    //스파르타 이미지 세팅
+    let spartaImageView: UIImageView = {
+        let spartaImage = UIImageView()
+        spartaImage.contentMode = .scaleAspectFit
+        spartaImage.backgroundColor = .white
+        spartaImage.translatesAutoresizingMaskIntoConstraints = false
+        return spartaImage
+    }()
+    
     //할 일 확인하기 버튼 세팅
     lazy var todoButton: UIButton = {
         let todobutton = UIButton(primaryAction: UIAction(handler: { _ in
@@ -57,13 +66,24 @@ class HomeViewController: UIViewController {
         
         spartaImagePrint()
         homeButtonPrint()
-        
-        
     }
     
-    ///가져온 이미지를 어떻게 어디에 얼마나 그려줄지 정하고 업데이트 하기
+    ///이미지 가져와서 업데이트 준비, 가져온 이미지를 어떻게 어디에 얼마나 그려줄지 정하고 업데이트 하기
     func spartaImagePrint() {
-        spartaImageSetting()
+        guard let url = URL(string: "https://spartacodingclub.kr/css/images/scc-og.jpg") else {
+            return
+        }
+        
+        DispatchQueue.global().async {
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self.spartaImageView.image = image
+                        print(image)
+                    }
+                }
+            }
+        }
         
         view.addSubview(spartaImageView)
         
@@ -79,7 +99,7 @@ class HomeViewController: UIViewController {
         ])
     }
     
-    ///홈에 있는 버튼 세개 위치와 크기 정해서 출력하기
+    ///세개의 버튼 위치와 크기 정해서 출력하기
     func homeButtonPrint() {
         view.addSubview(todoButton)
         view.addSubview(doneButton)
