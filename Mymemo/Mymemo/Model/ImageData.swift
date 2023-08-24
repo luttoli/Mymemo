@@ -15,6 +15,7 @@ let spartaImageView: UIImageView = {
     spartaImage.backgroundColor = .red
     spartaImage.clipsToBounds = false
     spartaImage.translatesAutoresizingMaskIntoConstraints = false
+    
     return spartaImage
 }()
 
@@ -35,3 +36,4 @@ func spartaImageSetting() {
         }
     }
 }
+
