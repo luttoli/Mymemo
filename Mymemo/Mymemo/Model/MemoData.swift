@@ -9,6 +9,7 @@ import Foundation
 
 struct Memo {
     var id: Int
+    var memoType: String
     var memoTitle: String
     var momoIsCompleted: Bool
     var momoDate: String

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B8A0EDA12A95E8B9000D3871 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EDA02A95E8B9000D3871 /* AppDelegate.swift */; };
 		B8A0EDA32A95E8B9000D3871 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EDA22A95E8B9000D3871 /* SceneDelegate.swift */; };
-		B8A0EDA52A95E8B9000D3871 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EDA42A95E8B9000D3871 /* ViewController.swift */; };
+		B8A0EDA52A95E8B9000D3871 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EDA42A95E8B9000D3871 /* HomeViewController.swift */; };
 		B8A0EDAB2A95E8B9000D3871 /* Mymemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EDA92A95E8B9000D3871 /* Mymemo.xcdatamodeld */; };
 		B8A0EDAD2A95E8BA000D3871 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8A0EDAC2A95E8BA000D3871 /* Assets.xcassets */; };
 		B8A0EDB02A95E8BA000D3871 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A0EDAE2A95E8BA000D3871 /* LaunchScreen.storyboard */; };
@@ -18,6 +18,9 @@
 		B8A0EDC72A95E8BA000D3871 /* MymemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EDC62A95E8BA000D3871 /* MymemoUITestsLaunchTests.swift */; };
 		B8A0EE142A95F9C8000D3871 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE132A95F9C8000D3871 /* MemoData.swift */; };
 		B8A0EE1D2A9653A8000D3871 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE1C2A9653A8000D3871 /* ImageData.swift */; };
+		B8A0EE202A96F211000D3871 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE1F2A96F211000D3871 /* TodoViewController.swift */; };
+		B8A0EE222A96F21A000D3871 /* DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE212A96F21A000D3871 /* DoneViewController.swift */; };
+		B8A0EE242A96F224000D3871 /* AnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE232A96F224000D3871 /* AnimalViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,7 +44,7 @@
 		B8A0ED9D2A95E8B9000D3871 /* Mymemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mymemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A0EDA02A95E8B9000D3871 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8A0EDA22A95E8B9000D3871 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B8A0EDA42A95E8B9000D3871 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B8A0EDA42A95E8B9000D3871 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B8A0EDAA2A95E8B9000D3871 /* Mymemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mymemo.xcdatamodel; sourceTree = "<group>"; };
 		B8A0EDAC2A95E8BA000D3871 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8A0EDAF2A95E8BA000D3871 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +56,9 @@
 		B8A0EDC62A95E8BA000D3871 /* MymemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MymemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B8A0EE132A95F9C8000D3871 /* MemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
 		B8A0EE1C2A9653A8000D3871 /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
+		B8A0EE1F2A96F211000D3871 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
+		B8A0EE212A96F21A000D3871 /* DoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneViewController.swift; sourceTree = "<group>"; };
+		B8A0EE232A96F224000D3871 /* AnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +153,7 @@
 				B8A0EE162A964DDE000D3871 /* Home */,
 				B8A0EE172A964DE4000D3871 /* Todo */,
 				B8A0EE182A964DF1000D3871 /* Done */,
+				B8A0EE1E2A966ADD000D3871 /* Animal */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -154,7 +161,7 @@
 		B8A0EE162A964DDE000D3871 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B8A0EDA42A95E8B9000D3871 /* ViewController.swift */,
+				B8A0EDA42A95E8B9000D3871 /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -162,6 +169,7 @@
 		B8A0EE172A964DE4000D3871 /* Todo */ = {
 			isa = PBXGroup;
 			children = (
+				B8A0EE1F2A96F211000D3871 /* TodoViewController.swift */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -169,8 +177,17 @@
 		B8A0EE182A964DF1000D3871 /* Done */ = {
 			isa = PBXGroup;
 			children = (
+				B8A0EE212A96F21A000D3871 /* DoneViewController.swift */,
 			);
 			path = Done;
+			sourceTree = "<group>";
+		};
+		B8A0EE1E2A966ADD000D3871 /* Animal */ = {
+			isa = PBXGroup;
+			children = (
+				B8A0EE232A96F224000D3871 /* AnimalViewController.swift */,
+			);
+			path = Animal;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -303,8 +320,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8A0EDA52A95E8B9000D3871 /* ViewController.swift in Sources */,
+				B8A0EE222A96F21A000D3871 /* DoneViewController.swift in Sources */,
+				B8A0EDA52A95E8B9000D3871 /* HomeViewController.swift in Sources */,
 				B8A0EE142A95F9C8000D3871 /* MemoData.swift in Sources */,
+				B8A0EE202A96F211000D3871 /* TodoViewController.swift in Sources */,
+				B8A0EE242A96F224000D3871 /* AnimalViewController.swift in Sources */,
 				B8A0EDA12A95E8B9000D3871 /* AppDelegate.swift in Sources */,
 				B8A0EDA32A95E8B9000D3871 /* SceneDelegate.swift in Sources */,
 				B8A0EDAB2A95E8B9000D3871 /* Mymemo.xcdatamodeld in Sources */,
