@@ -22,18 +22,20 @@ class TodoViewController: UIViewController {
         
         todoTableView.dataSource = self
         todoTableView.delegate = self
-        
         todoTableViewPrint()
         todoTableView.register(TodoTableViewCell.self, forCellReuseIdentifier: TodoTableViewCell.identifier)
     }
     
+    //
     func todoTableViewPrint() {
         view.addSubview(todoTableView)
         todoTableView.translatesAutoresizingMaskIntoConstraints = false
         todoTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        todoTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
-        todoTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        todoTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
+        todoTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
         todoTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        todoTableView.backgroundColor = .systemGray6
+        
     }
 
 }
@@ -48,7 +50,10 @@ extension TodoViewController: UITableViewDataSource {
         guard let cell = todoTableView.dequeueReusableCell(withIdentifier: "TodoTableViewCell", for: indexPath) as? TodoTableViewCell else {
             return UITableViewCell()
         }
-        cell.todoCellSettion(TodoList.todofullList[indexPath.row])
+        
+        cell.layer.cornerRadius = 10
+        
+        cell.todocellUISetting(TodoList.todofullList[indexPath.row])
         
         return cell
     }
