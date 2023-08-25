@@ -16,10 +16,12 @@
 		B8A0EDBB2A95E8BA000D3871 /* MymemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EDBA2A95E8BA000D3871 /* MymemoTests.swift */; };
 		B8A0EDC52A95E8BA000D3871 /* MymemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EDC42A95E8BA000D3871 /* MymemoUITests.swift */; };
 		B8A0EDC72A95E8BA000D3871 /* MymemoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EDC62A95E8BA000D3871 /* MymemoUITestsLaunchTests.swift */; };
-		B8A0EE142A95F9C8000D3871 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE132A95F9C8000D3871 /* MemoData.swift */; };
+		B8A0EE142A95F9C8000D3871 /* TodoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE132A95F9C8000D3871 /* TodoData.swift */; };
 		B8A0EE202A96F211000D3871 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE1F2A96F211000D3871 /* TodoViewController.swift */; };
 		B8A0EE222A96F21A000D3871 /* DoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE212A96F21A000D3871 /* DoneViewController.swift */; };
 		B8A0EE242A96F224000D3871 /* AnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE232A96F224000D3871 /* AnimalViewController.swift */; };
+		B8A0EE282A988345000D3871 /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE272A988345000D3871 /* TodoTableViewCell.swift */; };
+		B8A0EE2A2A988BE9000D3871 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE292A988BE9000D3871 /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,10 +55,12 @@
 		B8A0EDC02A95E8BA000D3871 /* MymemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MymemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A0EDC42A95E8BA000D3871 /* MymemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MymemoUITests.swift; sourceTree = "<group>"; };
 		B8A0EDC62A95E8BA000D3871 /* MymemoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MymemoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		B8A0EE132A95F9C8000D3871 /* MemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
+		B8A0EE132A95F9C8000D3871 /* TodoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoData.swift; sourceTree = "<group>"; };
 		B8A0EE1F2A96F211000D3871 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		B8A0EE212A96F21A000D3871 /* DoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneViewController.swift; sourceTree = "<group>"; };
 		B8A0EE232A96F224000D3871 /* AnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewController.swift; sourceTree = "<group>"; };
+		B8A0EE272A988345000D3871 /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
+		B8A0EE292A988BE9000D3871 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +143,8 @@
 		B8A0EE122A95F9A7000D3871 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B8A0EE132A95F9C8000D3871 /* MemoData.swift */,
+				B8A0EE132A95F9C8000D3871 /* TodoData.swift */,
+				B8A0EE292A988BE9000D3871 /* Extension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -167,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				B8A0EE1F2A96F211000D3871 /* TodoViewController.swift */,
+				B8A0EE272A988345000D3871 /* TodoTableViewCell.swift */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -319,8 +325,10 @@
 			files = (
 				B8A0EE222A96F21A000D3871 /* DoneViewController.swift in Sources */,
 				B8A0EDA52A95E8B9000D3871 /* HomeViewController.swift in Sources */,
-				B8A0EE142A95F9C8000D3871 /* MemoData.swift in Sources */,
+				B8A0EE142A95F9C8000D3871 /* TodoData.swift in Sources */,
+				B8A0EE282A988345000D3871 /* TodoTableViewCell.swift in Sources */,
 				B8A0EE202A96F211000D3871 /* TodoViewController.swift in Sources */,
+				B8A0EE2A2A988BE9000D3871 /* Extension.swift in Sources */,
 				B8A0EE242A96F224000D3871 /* AnimalViewController.swift in Sources */,
 				B8A0EDA12A95E8B9000D3871 /* AppDelegate.swift in Sources */,
 				B8A0EDA32A95E8B9000D3871 /* SceneDelegate.swift in Sources */,

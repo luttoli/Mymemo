@@ -8,23 +8,52 @@
 import UIKit
 
 class TodoViewController: UIViewController {
+    
+    //
+    var todoData: Todo?
 
+    //
+    let todoTableView = UITableView()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         self.navigationItem.title = "할 일"
-        // Do any additional setup after loading the view.
+        
+        todoTableView.dataSource = self
+        todoTableView.delegate = self
+        
+        todoTableViewPrint()
+        todoTableView.register(TodoTableViewCell.self, forCellReuseIdentifier: TodoTableViewCell.identifier)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func todoTableViewPrint() {
+        view.addSubview(todoTableView)
+        todoTableView.translatesAutoresizingMaskIntoConstraints = false
+        todoTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        todoTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        todoTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+        todoTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
-    */
 
+}
+
+//
+extension TodoViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return TodoList.todofullList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = todoTableView.dequeueReusableCell(withIdentifier: "TodoTableViewCell", for: indexPath) as? TodoTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.todoCellSettion(TodoList.todofullList[indexPath.row])
+        
+        return cell
+    }
+}
+
+extension TodoViewController: UITableViewDelegate {
+    
 }
