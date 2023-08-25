@@ -13,7 +13,7 @@ class TodoTableViewCell: UITableViewCell {
     static let identifier = "TodoTableViewCell"
     
     //Todo 구조체 받아오기
-    var todo: Todo?
+    var todoData: Todo?
     
     //Todo 할 일 제목 설정
     lazy var todoTitleLabel: UILabel = {
@@ -42,14 +42,14 @@ class TodoTableViewCell: UITableViewCell {
     
     //Todo 할 일 제목 스타일 지정
     func todocellUISetting(_ _todo: Todo) {
-        todo = _todo
-        guard let todo else { return }
-        if todo.todoIsCompleted {
+        todoData = _todo
+        guard let todoData else { return }
+        if todoData.todoIsCompleted {
             todoTitleLabel.text = nil
-            todoTitleLabel.attributedText = todo.todoTitle.strikeThrough()
+            todoTitleLabel.attributedText = todoData.todoTitle.strikeThrough()
         } else {
             todoTitleLabel.attributedText = nil
-            todoTitleLabel.text = todo.todoTitle
+            todoTitleLabel.text = todoData.todoTitle
         }
         
     }
