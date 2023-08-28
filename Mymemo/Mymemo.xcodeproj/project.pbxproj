@@ -22,7 +22,6 @@
 		B8A0EE242A96F224000D3871 /* AnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE232A96F224000D3871 /* AnimalViewController.swift */; };
 		B8A0EE282A988345000D3871 /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE272A988345000D3871 /* TodoTableViewCell.swift */; };
 		B8A0EE2A2A988BE9000D3871 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE292A988BE9000D3871 /* Extension.swift */; };
-		B8A0EE2D2A990C67000D3871 /* TodoAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE2C2A990C67000D3871 /* TodoAddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,7 +61,6 @@
 		B8A0EE232A96F224000D3871 /* AnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewController.swift; sourceTree = "<group>"; };
 		B8A0EE272A988345000D3871 /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
 		B8A0EE292A988BE9000D3871 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
-		B8A0EE2C2A990C67000D3871 /* TodoAddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoAddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,7 +173,6 @@
 			children = (
 				B8A0EE1F2A96F211000D3871 /* TodoViewController.swift */,
 				B8A0EE272A988345000D3871 /* TodoTableViewCell.swift */,
-				B8A0EE2B2A990C44000D3871 /* AddTodo */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -194,14 +191,6 @@
 				B8A0EE232A96F224000D3871 /* AnimalViewController.swift */,
 			);
 			path = Animal;
-			sourceTree = "<group>";
-		};
-		B8A0EE2B2A990C44000D3871 /* AddTodo */ = {
-			isa = PBXGroup;
-			children = (
-				B8A0EE2C2A990C67000D3871 /* TodoAddViewController.swift */,
-			);
-			path = AddTodo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,7 +331,6 @@
 				B8A0EE2A2A988BE9000D3871 /* Extension.swift in Sources */,
 				B8A0EE242A96F224000D3871 /* AnimalViewController.swift in Sources */,
 				B8A0EDA12A95E8B9000D3871 /* AppDelegate.swift in Sources */,
-				B8A0EE2D2A990C67000D3871 /* TodoAddViewController.swift in Sources */,
 				B8A0EDA32A95E8B9000D3871 /* SceneDelegate.swift in Sources */,
 				B8A0EDAB2A95E8B9000D3871 /* Mymemo.xcdatamodeld in Sources */,
 			);
