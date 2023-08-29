@@ -24,7 +24,6 @@ class HomeViewController: UIViewController {
         let todobutton = UIButton(primaryAction: UIAction(handler: { _ in
             self.navigationController?.pushViewController(TodoViewController(), animated: true)
         }))
-        
         todobutton.setTitle("할 일 확인하기", for: .normal)
         todobutton.setTitleColor(.blue, for: .normal)
         todobutton.titleLabel?.font = UIFont.systemFont(ofSize: 17)
@@ -38,7 +37,6 @@ class HomeViewController: UIViewController {
         let donebutton = UIButton(primaryAction: UIAction(handler: { _ in
             self.navigationController?.pushViewController(DoneViewController(), animated: true)
         }))
-        
         donebutton.setTitle("완료한 일 확인하기", for: .normal)
         donebutton.setTitleColor(.blue, for: .normal)
         donebutton.titleLabel?.font = UIFont.systemFont(ofSize: 17)
@@ -52,7 +50,6 @@ class HomeViewController: UIViewController {
         let animalbutton = UIButton(primaryAction: UIAction(handler: { _ in
             self.navigationController?.pushViewController(AnimalViewController(), animated: true)
         }))
-        
         animalbutton.setTitle("🐕", for: .normal)
         animalbutton.titleLabel?.font = UIFont.systemFont(ofSize: 25)
         animalbutton.backgroundColor = .white
@@ -68,7 +65,7 @@ class HomeViewController: UIViewController {
         homeButtonPrint()
     }
     
-    ///이미지 가져와서 업데이트 준비, 가져온 이미지를 어떻게 어디에 얼마나 그려줄지 정하고 업데이트 하기
+    //이미지 가져와서 업데이트 준비, 가져온 이미지를 어떻게 어디에 얼마나 그려줄지 정하고 업데이트 하기
     func spartaImagePrint() {
         guard let url = URL(string: "https://spartacodingclub.kr/css/images/scc-og.jpg") else {
             return
@@ -99,7 +96,7 @@ class HomeViewController: UIViewController {
         ])
     }
     
-    ///세개의 버튼 위치와 크기 정해서 출력하기
+    //세개의 버튼 위치와 크기 정해서 출력하기
     func homeButtonPrint() {
         view.addSubview(todoButton)
         view.addSubview(doneButton)
