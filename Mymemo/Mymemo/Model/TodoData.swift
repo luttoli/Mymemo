@@ -60,11 +60,29 @@ struct TodoList {
         return todoFullList.filter { $0.todoIsCompleted == true }
     }
     
-    //타이틀 수정
+    //todo title 수정
+    static func todoTitleEdit(todo: Todo, todoTitle: String) {
+        for index in 0 ..< todoFullList.count {
+            if todoFullList[index].id == todo.id {
+                todoFullList[index].todoTitle = todoTitle
+            }
+        }
+    }
     
+    //todo type 수정
+    static func todoTypeEdit(todo: Todo, todoType: String) {
+        for index in 0 ..< todoFullList.count {
+            if todoFullList[index].id == todo.id {
+                todoFullList[index].todoType = todoType
+            }
+        }
+    }
     
     //시간 수정
     
     
     //삭제
+    static func todoRemove(todo: Todo) {
+        todoFullList.removeAll(where: { $0.id == todo.id })
+    }
 }
