@@ -22,6 +22,7 @@
 		B8A0EE242A96F224000D3871 /* AnimalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE232A96F224000D3871 /* AnimalViewController.swift */; };
 		B8A0EE282A988345000D3871 /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE272A988345000D3871 /* TodoTableViewCell.swift */; };
 		B8A0EE2A2A988BE9000D3871 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE292A988BE9000D3871 /* Extension.swift */; };
+		B8A0EE302A9E6035000D3871 /* TodoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE2F2A9E6035000D3871 /* TodoDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		B8A0EE232A96F224000D3871 /* AnimalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalViewController.swift; sourceTree = "<group>"; };
 		B8A0EE272A988345000D3871 /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
 		B8A0EE292A988BE9000D3871 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		B8A0EE2F2A9E6035000D3871 /* TodoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			children = (
 				B8A0EE1F2A96F211000D3871 /* TodoViewController.swift */,
 				B8A0EE272A988345000D3871 /* TodoTableViewCell.swift */,
+				B8A0EE2E2A9E6012000D3871 /* TodoDetail */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -191,6 +194,14 @@
 				B8A0EE232A96F224000D3871 /* AnimalViewController.swift */,
 			);
 			path = Animal;
+			sourceTree = "<group>";
+		};
+		B8A0EE2E2A9E6012000D3871 /* TodoDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B8A0EE2F2A9E6035000D3871 /* TodoDetailViewController.swift */,
+			);
+			path = TodoDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +338,7 @@
 				B8A0EDA52A95E8B9000D3871 /* HomeViewController.swift in Sources */,
 				B8A0EE142A95F9C8000D3871 /* TodoData.swift in Sources */,
 				B8A0EE282A988345000D3871 /* TodoTableViewCell.swift in Sources */,
+				B8A0EE302A9E6035000D3871 /* TodoDetailViewController.swift in Sources */,
 				B8A0EE202A96F211000D3871 /* TodoViewController.swift in Sources */,
 				B8A0EE2A2A988BE9000D3871 /* Extension.swift in Sources */,
 				B8A0EE242A96F224000D3871 /* AnimalViewController.swift in Sources */,

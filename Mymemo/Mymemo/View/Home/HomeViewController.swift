@@ -62,7 +62,7 @@ class HomeViewController: UIViewController {
         self.view.backgroundColor = .white
         
         spartaImagePrint()
-        homeButtonPrint()
+        homeViewPrint()
     }
     
     //이미지 가져와서 업데이트 준비, 가져온 이미지를 어떻게 어디에 얼마나 그려줄지 정하고 업데이트 하기
@@ -97,7 +97,7 @@ class HomeViewController: UIViewController {
     }
     
     //세개의 버튼 위치와 크기 정해서 출력하기
-    func homeButtonPrint() {
+    func homeViewPrint() {
         view.addSubview(todoButton)
         view.addSubview(doneButton)
         view.addSubview(animalButton)

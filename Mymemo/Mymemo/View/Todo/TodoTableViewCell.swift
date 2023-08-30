@@ -24,12 +24,45 @@ class TodoTableViewCell: UITableViewCell {
         return todoTitleLabel
     }()
     
-    //Todo 할 일 체크 설정
+    //Todo 할 일 체크 버튼 설정
     lazy var todoCompletedButton: UISwitch = {
         let todoCompletedButton = UISwitch()
+        
+        todoCompletedButton.isOn = false
+        todoCompletedButton.addTarget(self, action: #selector(tapSwitchButton(sender:)), for: UIControl.Event.valueChanged)
+        
         todoCompletedButton.translatesAutoresizingMaskIntoConstraints = false
         return todoCompletedButton
     }()
+    
+    //
+    @objc func tapSwitchButton(sender: UISwitch) {
+        guard let todoData = self.todoData else {
+            return
+        }
+        
+        if sender.isOn {
+            todoTitleLabel.text = nil
+            todoTitleLabel.attributedText = todoData.todoTitle.strikeThrough()
+            
+            self.todoData?.todoIsCompleted = true
+            self.todoData?.todoDate = Date().dateTime()
+            TodoList.completed(todo: todoData, todoIsCompleted: true, todoDate: Date().dateTime())
+        } else {
+            todoTitleLabel.attributedText = nil
+            todoTitleLabel.text = todoData.todoTitle
+            
+            self.todoData?.todoIsCompleted = false
+            self.todoData?.todoDate = Date().dateTime()
+            TodoList.completed(todo: todoData, todoIsCompleted: false, todoDate: Date().dateTime())
+        }
+        
+        if let tableView = superview as? UITableView,
+           let indexPath = tableView.indexPath(for: self) {
+            tableView.reloadRows(at: [indexPath], with: .none)
+        }
+            
+    }
     
     //cell 스타일 지정?
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -40,7 +73,7 @@ class TodoTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //Todo 할 일 제목 스타일 지정
+    //Todo 할 일 타이틀 스타일 지정
     func todocellUISetting(_ _todo: Todo) {
         todoData = _todo
         guard let todoData else { return }
@@ -51,13 +84,13 @@ class TodoTableViewCell: UITableViewCell {
             todoTitleLabel.attributedText = nil
             todoTitleLabel.text = todoData.todoTitle
         }
-        
+        todoCompletedButton.isOn = todoData.todoIsCompleted
     }
     
     //cell 그리기
     func todocellPrint() {
-        self.addSubview(todoTitleLabel)
-        self.addSubview(todoCompletedButton)
+        contentView.addSubview(todoTitleLabel)
+        contentView.addSubview(self.todoCompletedButton)
 
         todoTitleLabel.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         todoTitleLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10).isActive = true
@@ -66,15 +99,13 @@ class TodoTableViewCell: UITableViewCell {
         todoCompletedButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10).isActive = true
     }
 
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

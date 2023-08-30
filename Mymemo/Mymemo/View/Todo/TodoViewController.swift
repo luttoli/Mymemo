@@ -34,8 +34,16 @@ class TodoViewController: UIViewController {
         //TableView 정의, cell, 노출
         todoTableView.dataSource = self
         todoTableView.delegate = self
+        todoTableView.reloadData()
         todoTableView.register(TodoTableViewCell.self, forCellReuseIdentifier: TodoTableViewCell.identifier)
         todoTableViewPrint()
+    }
+    
+    //???
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        todoTableView.reloadData()
     }
     
     //Picker 선언
@@ -101,8 +109,9 @@ class TodoViewController: UIViewController {
         todoTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
         todoTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
         todoTableView.backgroundColor = .systemGray6
-        
     }
+    
+    //
     
 }
 
@@ -138,6 +147,15 @@ extension TodoViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     {
         return 30
     }
+    
+    //피커뷰 폰트
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16)
+        label.text = pickerList[row]
+        label.textAlignment = .center
+        return label
+    }
 }
 
 //Table 속성
@@ -151,11 +169,6 @@ extension TodoViewController: UITableViewDataSource, UITableViewDelegate {
     //section마다의 타이틀?
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return todoTableSection[section]
-    }
-    
-    //TableView Section의 Cell 클릭 시
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
     }
     
     //TableView Section 순서에 따라 리스트 개수
@@ -187,5 +200,24 @@ extension TodoViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         return cell
+    }
+    
+    //TableView Section의 Cell 클릭 시
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        todoTableView.deselectRow(at: indexPath, animated: true)
+        
+        var selectedTodo: Todo
+        
+        if indexPath.section == 0 {
+            selectedTodo = TodoList.todoWorkList()[indexPath.row]
+        } else if indexPath.section == 1 {
+            selectedTodo = TodoList.todoLifeList()[indexPath.row]
+        } else {
+            return
+        }
+        
+        let detailView = TodoDetailViewController()
+        detailView.todoData = selectedTodo
+        navigationController?.pushViewController(detailView, animated: true)
     }
 }

@@ -18,7 +18,7 @@ struct Todo {
 struct TodoList {
     //전체 리스트
     static var todoFullList: [Todo] = [
-        Todo(id: 0, todoType: "Life", todoTitle: "청소하기", todoIsCompleted: false, todoDate: "23년 08월 21일 (금) 14:00"),
+        Todo(id: 0, todoType: "Life", todoTitle: "청소하기", todoIsCompleted: true, todoDate: "23년 08월 21일 (금) 14:00"),
         Todo(id: 1, todoType: "Life", todoTitle: "빨래하기", todoIsCompleted: false, todoDate: "23년 08월 22일 (금) 14:00"),
         Todo(id: 2, todoType: "Life", todoTitle: "약먹기", todoIsCompleted: false, todoDate: "23년 08월 23일 (금) 14:00"),
         Todo(id: 3, todoType: "Work", todoTitle: "코드로 UI 구현하기", todoIsCompleted: false, todoDate: "23년 08월 25일 (금) 14:00"),
@@ -37,13 +37,28 @@ struct TodoList {
     }
     
     //완료 처리
-    
+    static func completed(todo: Todo, todoIsCompleted: Bool, todoDate: String) {
+        for index in 0 ..< todoFullList.count {
+            if todoFullList[index].id == todo.id {
+                todoFullList[index].todoIsCompleted = todoIsCompleted
+                todoFullList[index].todoDate = todoDate
+            }
+        }
+    }
     
     //완료 체크
-    
+    static func todoEditCompleted(todo: Todo, todoIsCompleted: Bool) {
+        for index in 0 ..< todoFullList.count {
+            if todoFullList[index].id == todo.id {
+                todoFullList[index].todoIsCompleted = todoIsCompleted
+            }
+        }
+    }
     
     //완료 리스트
-    
+    static func todoCompletList() -> [Todo] {
+        return todoFullList.filter { $0.todoIsCompleted == true }
+    }
     
     //타이틀 수정
     
