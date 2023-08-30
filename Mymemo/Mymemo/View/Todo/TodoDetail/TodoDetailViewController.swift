@@ -83,8 +83,6 @@ class TodoDetailViewController: UIViewController {
         //피커뷰 항상 맨 위로
         pickerView.selectRow(selectedRow, inComponent: 0, animated: true)
         self.present(editAlert, animated: true)
-        
-        print("----->>>>>>\(TodoList.todoFullList)")
     }
     
     //TodoDetailView todo type
@@ -116,9 +114,9 @@ class TodoDetailViewController: UIViewController {
     
     //삭제하기 버튼
     lazy var detailremoveButton: UIButton = {
-        let detailremoveButton = UIButton(primaryAction: UIAction(handler: { _ in
-            self.navigationController?.pushViewController(TodoViewController(), animated: true)
-        }))
+        let detailremoveButton = UIButton(primaryAction: UIAction(handler: { [weak self] _ in
+                self?.removeButtonTapped()
+            }))
         detailremoveButton.setTitle("삭제하기", for: .normal)
         detailremoveButton.setTitleColor(.red, for: .normal)
         detailremoveButton.titleLabel?.font = UIFont.systemFont(ofSize: 17)
@@ -126,6 +124,28 @@ class TodoDetailViewController: UIViewController {
         detailremoveButton.translatesAutoresizingMaskIntoConstraints = false
         return detailremoveButton
     }()
+    
+    //
+    @objc func removeButtonTapped() {
+        let removeAlert = UIAlertController(title: "할 일 삭제", message: "이 할 일을 삭제하시겠습니까?", preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        let deleteAction = UIAlertAction(title: "삭제", style: .destructive) { [weak self] _ in
+            guard let self = self, let todoData = self.todoData else { return }
+            
+            // 데이터 소스에서 해당 할 일 삭제
+            TodoList.todoRemove(todo: todoData)
+            
+            // 이전 화면으로 돌아가기
+            self.navigationController?.popViewController(animated: true)
+        }
+        
+        removeAlert.addAction(cancelAction)
+        removeAlert.addAction(deleteAction)
+        
+        self.present(removeAlert, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
