@@ -14,8 +14,8 @@ class TodoViewController: UIViewController {
     
     //네비게이션바 오른쪽 아이템 "추가" 버튼 생성
     lazy var rigthButton: UIBarButtonItem = {
-        let rightbutton = UIBarButtonItem(title: "추가", style: .plain, target: self, action: #selector(TodoViewController.addAlertView))
-        return rightbutton
+        let rigthButton = UIBarButtonItem(title: "추가", style: .plain, target: self, action: #selector(TodoViewController.addAlertView))
+        return rigthButton
     }()
     
     //TableView 선언

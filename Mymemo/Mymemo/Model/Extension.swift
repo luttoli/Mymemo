@@ -22,7 +22,7 @@ extension String {
 extension Date {
     func dateTime() -> String{
         let formatter = DateFormatter() //객체 생성
-        formatter.dateFormat = "M월 dd일 (EEEEE) HH:mm" //데이터 포멧 설정
+        formatter.dateFormat = "yy년 M월 d일 (EEEEE) HH:mm" //데이터 포멧 설정
         let str = formatter.string(from: Date()) //문자열로 바꾸기
         return str
     }
