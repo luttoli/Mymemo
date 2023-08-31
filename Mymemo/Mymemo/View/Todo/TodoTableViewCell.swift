@@ -35,7 +35,7 @@ class TodoTableViewCell: UITableViewCell {
         return todoCompletedButton
     }()
     
-    //
+    //Todo cell SwitchButton 클릭 이벤트
     @objc func tapSwitchButton(sender: UISwitch) {
         guard let todoData = self.todoData else {
             return
@@ -61,7 +61,6 @@ class TodoTableViewCell: UITableViewCell {
            let indexPath = tableView.indexPath(for: self) {
             tableView.reloadRows(at: [indexPath], with: .none)
         }
-            
     }
     
     //cell 스타일 지정?
@@ -87,7 +86,7 @@ class TodoTableViewCell: UITableViewCell {
         todoCompletedButton.isOn = todoData.todoIsCompleted
     }
     
-    //cell 그리기
+    //cell 그리기 (contentView: 셀 컨텐츠 영역 내 버튼이 추가되도록)
     func todocellPrint() {
         contentView.addSubview(todoTitleLabel)
         contentView.addSubview(self.todoCompletedButton)

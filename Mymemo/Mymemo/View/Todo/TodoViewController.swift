@@ -111,8 +111,6 @@ class TodoViewController: UIViewController {
         todoTableView.backgroundColor = .systemGray6
     }
     
-    //
-    
 }
 
 //Picker 속성
@@ -204,7 +202,6 @@ extension TodoViewController: UITableViewDataSource, UITableViewDelegate {
     
     //TableView Section의 Cell 클릭 시
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        todoTableView.deselectRow(at: indexPath, animated: true)
         
         var selectedTodo: Todo
         

@@ -51,7 +51,7 @@ class HomeViewController: UIViewController {
             self.navigationController?.pushViewController(AnimalViewController(), animated: true)
         }))
         animalbutton.setTitle("🐕", for: .normal)
-        animalbutton.titleLabel?.font = UIFont.systemFont(ofSize: 25)
+        animalbutton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
         animalbutton.backgroundColor = .white
         animalbutton.translatesAutoresizingMaskIntoConstraints = false
         return animalbutton
