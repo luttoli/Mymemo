@@ -15,7 +15,7 @@ class TodoDetailViewController: UIViewController {
     //Todo 구조체 받아오기
     var todoData: Todo?
     
-    //네비게이션바 오른쪽 아이템 "추가" 버튼 생성
+    //네비게이션바 오른쪽 아이템 "수정" 버튼 생성
     lazy var rigthButton: UIBarButtonItem = {
         let rightbutton = UIBarButtonItem(title: "수정", style: .plain, target: self, action: #selector(TodoDetailViewController.editAlertView))
         return rightbutton

@@ -84,8 +84,14 @@ class TodoViewController: UIViewController {
             //Todo 구조체가 가진 id에 fullList가 있는지 없는지 모르는 상태니까 해당 리스트의 마지막 id값에서 -1을 빼고 1을 더한 값을 id로, title에 addTodotext, iscompleted에 false를
             let newList = Todo(id: (TodoList.todoFullList.last?.id ?? -1) + 1, todoType: self.typeValue, todoTitle: addTodotext, todoIsCompleted: false, todoDate: "")
             
+//            var addnewList = TodoList.todoFullList()
+//            
+//            let newList = Todo(id: (addnewList.last?.id ?? -1) + 1, todoType: self.typeValue, todoTitle: addTodotext, todoIsCompleted: false, todoDate: "")
+            
             //그걸 TodoList에 fullList 배열에 추가한다.
             TodoList.todoFullList.append(newList)
+            
+//            TodoList.addTodoList(newList)
             
             //추가할 때마다 테이블뷰업데이트
             self.todoTableView.reloadData()
@@ -185,8 +191,6 @@ extension TodoViewController: UITableViewDataSource, UITableViewDelegate {
         guard let cell = todoTableView.dequeueReusableCell(withIdentifier: "TodoTableViewCell", for: indexPath) as? TodoTableViewCell else {
             return UITableViewCell()
         }
-        
-        //아이폰 설정 화면처럼 뭉탱이 cell 둥글게 하고시푼데
         
         //section마다 출력할 리스트
         if indexPath.section == 0 {
