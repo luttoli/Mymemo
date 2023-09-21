@@ -7,62 +7,92 @@
 // HomeViewController
 
 import UIKit
+import SnapKit
 
 class HomeViewController: UIViewController {
     
+    lazy var homeUIStackView: UIStackView = {
+        let homeUIStackView = UIStackView(arrangedSubviews: [
+            spartaImageView, todoButton, doneButton, animalButton, profileButton
+        ])
+        homeUIStackView.axis = .vertical
+        homeUIStackView.spacing = 20
+        return homeUIStackView
+    }()
+    
     //스파르타 이미지 세팅
-    let spartaImageView: UIImageView = {
-        let spartaImage = UIImageView()
-        spartaImage.contentMode = .scaleAspectFit
-        spartaImage.backgroundColor = .white
-        spartaImage.translatesAutoresizingMaskIntoConstraints = false
-        return spartaImage
+    lazy var spartaImageView: UIImageView = {
+        let spartaImageView = UIImageView()
+        spartaImageView.contentMode = .scaleAspectFit
+        spartaImageView.backgroundColor = .white
+        return spartaImageView
     }()
     
     //할 일 확인하기 버튼 세팅
     lazy var todoButton: UIButton = {
-        let todobutton = UIButton(primaryAction: UIAction(handler: { _ in
+        let todoButton = UIButton(primaryAction: UIAction(handler: { _ in
             self.navigationController?.pushViewController(TodoViewController(), animated: true)
         }))
-        todobutton.setTitle("할 일 확인하기", for: .normal)
-        todobutton.setTitleColor(.blue, for: .normal)
-        todobutton.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        todobutton.backgroundColor = .white
-        todobutton.translatesAutoresizingMaskIntoConstraints = false
-        return todobutton
+        todoButton.setTitle("할 일 확인하기", for: .normal)
+        todoButton.setTitleColor(.blue, for: .normal)
+        todoButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        todoButton.backgroundColor = .white
+        return todoButton
     }()
     
     //완료한 일 확인하기 버튼 세팅
     lazy var doneButton: UIButton = {
-        let donebutton = UIButton(primaryAction: UIAction(handler: { _ in
+        let doneButton = UIButton(primaryAction: UIAction(handler: { _ in
             self.navigationController?.pushViewController(DoneViewController(), animated: true)
         }))
-        donebutton.setTitle("완료한 일 확인하기", for: .normal)
-        donebutton.setTitleColor(.blue, for: .normal)
-        donebutton.titleLabel?.font = UIFont.systemFont(ofSize: 17)
-        donebutton.backgroundColor = .white
-        donebutton.translatesAutoresizingMaskIntoConstraints = false
-        return donebutton
+        doneButton.setTitle("완료한 일 확인하기", for: .normal)
+        doneButton.setTitleColor(.blue, for: .normal)
+        doneButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        doneButton.backgroundColor = .white
+        return doneButton
     }()
     
     //동물 버튼 세팅
     lazy var animalButton: UIButton = {
-        let animalbutton = UIButton(primaryAction: UIAction(handler: { _ in
+        let animalButton = UIButton(primaryAction: UIAction(handler: { _ in
             self.navigationController?.pushViewController(AnimalViewController(), animated: true)
         }))
-        animalbutton.setTitle("🐕", for: .normal)
-        animalbutton.titleLabel?.font = UIFont.systemFont(ofSize: 30)
-        animalbutton.backgroundColor = .white
-        animalbutton.translatesAutoresizingMaskIntoConstraints = false
-        return animalbutton
+        animalButton.setTitle("🐕", for: .normal)
+        animalButton.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        animalButton.backgroundColor = .white
+        return animalButton
     }()
+    
+    lazy var profileButton: UIButton = {
+        let profileButton = UIButton(type: .system)
+        profileButton.addTarget(self, action: #selector(profileButtonClicked), for: .touchUpInside)
+        profileButton.setTitle("ProfileDesignViewController", for: .normal)
+        profileButton.setTitleColor(.blue, for: .normal)
+        profileButton.titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        profileButton.backgroundColor = .white
+        return profileButton
+    }()
+    
+    @objc func profileButtonClicked() {
+        let goProfile = ProfileDesignViewController()
+        goProfile.modalPresentationStyle = .fullScreen
+        present(goProfile, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
+        homeUIPrint()
+    }
+    
+    func homeUIPrint() {
+        view.addSubview(homeUIStackView)
         
+        homeUIStackView.snp.makeConstraints { make in
+            make.centerX.equalTo(self.view)
+            make.centerY.equalTo(self.view)
+        }
         spartaImagePrint()
-        homeViewPrint()
     }
     
     //이미지 가져와서 업데이트 준비, 가져온 이미지를 어떻게 어디에 얼마나 그려줄지 정하고 업데이트 하기
@@ -82,41 +112,9 @@ class HomeViewController: UIViewController {
             }
         }
         
-        view.addSubview(spartaImageView)
-        
-        NSLayoutConstraint.activate([
-            spartaImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            spartaImageView.widthAnchor.constraint(equalToConstant: 300),
-            spartaImageView.heightAnchor.constraint(equalToConstant: 150),
-            
-            spartaImageView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 200),
-            spartaImageView.leadingAnchor.constraint(equalTo: spartaImageView.leadingAnchor),
-            spartaImageView.trailingAnchor.constraint(equalTo: spartaImageView.trailingAnchor),
-            spartaImageView.bottomAnchor.constraint(equalTo: spartaImageView.bottomAnchor),
-        ])
-    }
-    
-    //세개의 버튼 위치와 크기 정해서 출력하기
-    func homeViewPrint() {
-        view.addSubview(todoButton)
-        view.addSubview(doneButton)
-        view.addSubview(animalButton)
-        
-        NSLayoutConstraint.activate([
-            todoButton.topAnchor.constraint(equalTo: spartaImageView.bottomAnchor, constant: 10),
-            todoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            todoButton.widthAnchor.constraint(equalToConstant: 150),
-            todoButton.heightAnchor.constraint(equalToConstant: 50),
-            
-            doneButton.topAnchor.constraint(equalTo: todoButton.bottomAnchor, constant: 10),
-            doneButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            doneButton.widthAnchor.constraint(equalToConstant: 150),
-            doneButton.heightAnchor.constraint(equalToConstant: 50),
-            
-            animalButton.topAnchor.constraint(equalTo: doneButton.bottomAnchor, constant: 10),
-            animalButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            animalButton.widthAnchor.constraint(equalToConstant: 150),
-            animalButton.heightAnchor.constraint(equalToConstant: 50)
-        ])
+        spartaImageView.snp.makeConstraints { make in
+            make.width.equalTo(300)
+            make.height.equalTo(150)
+        }
     }
 }

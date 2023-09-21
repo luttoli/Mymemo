@@ -18,7 +18,15 @@ class DoneViewController: UIViewController {
         return rigthButton
     }()
     
-    let doneTableView = UITableView()
+    lazy var doneTableView: UITableView = {
+        let doneTableView = UITableView()
+        doneTableView.dataSource = self
+        doneTableView.delegate = self
+        doneTableView.register(DoneTableViewCell.self, forCellReuseIdentifier: DoneTableViewCell.identifier)
+        doneTableView.rowHeight = UITableView.automaticDimension
+        return doneTableView
+    }()
+    
     
 
     override func viewDidLoad() {
@@ -28,11 +36,7 @@ class DoneViewController: UIViewController {
         self.navigationItem.title = "완료한 일"
         self.navigationItem.rightBarButtonItem = self.rigthButton
         
-        doneTableView.dataSource = self
-        doneTableView.delegate = self
         doneTableView.reloadData()
-        doneTableView.register(DoneTableViewCell.self, forCellReuseIdentifier: DoneTableViewCell.identifier)
-        doneTableView.rowHeight = UITableView.automaticDimension
         doneTableViewPrint()
         
     }
@@ -40,12 +44,14 @@ class DoneViewController: UIViewController {
     //Table 위치
     func doneTableViewPrint() {
         view.addSubview(doneTableView)
-        doneTableView.translatesAutoresizingMaskIntoConstraints = false
-        doneTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        doneTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
-        doneTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
-        doneTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        doneTableView.backgroundColor = .systemGray6
+        
+        doneTableView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.leading.equalTo(view.safeAreaLayoutGuide).offset(20)
+            make.trailing.equalTo(view.safeAreaLayoutGuide).offset(-20)
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
+            doneTableView.backgroundColor = .systemGray6
+        }
     }
 
 }

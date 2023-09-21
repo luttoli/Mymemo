@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import SnapKit
 
 class TodoViewController: UIViewController {
     
     //Todo 구조체 받아오기
-    var todoData: Todo?
+//    var todoData: Todo?
     
     //네비게이션바 오른쪽 아이템 "추가" 버튼 생성
     lazy var rigthButton: UIBarButtonItem = {
@@ -19,7 +20,14 @@ class TodoViewController: UIViewController {
     }()
     
     //TableView 선언
-    let todoTableView = UITableView()
+    lazy var todoTableView: UITableView = {
+        let todoTableView = UITableView()
+        todoTableView.dataSource = self
+        todoTableView.delegate = self
+        todoTableView.register(TodoTableViewCell.self, forCellReuseIdentifier: TodoTableViewCell.identifier)
+        return todoTableView
+    }()
+    
     
     //TableView Section 나누기
     let todoTableSection: [String] = ["Work", "Life"]
@@ -31,11 +39,7 @@ class TodoViewController: UIViewController {
         self.navigationItem.title = "할 일"
         self.navigationItem.rightBarButtonItem = self.rigthButton
         
-        //TableView 정의, cell, 노출
-        todoTableView.dataSource = self
-        todoTableView.delegate = self
         todoTableView.reloadData()
-        todoTableView.register(TodoTableViewCell.self, forCellReuseIdentifier: TodoTableViewCell.identifier)
         todoTableViewPrint()
     }
     
@@ -109,12 +113,14 @@ class TodoViewController: UIViewController {
     //Table 위치
     func todoTableViewPrint() {
         view.addSubview(todoTableView)
-        todoTableView.translatesAutoresizingMaskIntoConstraints = false
-        todoTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        todoTableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 20).isActive = true
-        todoTableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -20).isActive = true
-        todoTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
-        todoTableView.backgroundColor = .systemGray6
+        
+        todoTableView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.leading.equalTo(view.safeAreaLayoutGuide).offset(20)
+            make.trailing.equalTo(view.safeAreaLayoutGuide).offset(-20)
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
+            todoTableView.backgroundColor = .systemGray6
+        }
     }
     
 }

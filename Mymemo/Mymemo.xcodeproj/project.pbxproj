@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B8031FC32AB47F1B006BECFF /* ProfileDesignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8031FC22AB47F1B006BECFF /* ProfileDesignViewController.swift */; };
+		B8031FC62AB485EE006BECFF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B8031FC52AB485EE006BECFF /* SnapKit */; };
 		B84501C62A9FA01800811C40 /* URLData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84501C52A9FA01800811C40 /* URLData.swift */; };
 		B84501C82AA0B5BC00811C40 /* DoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84501C72AA0B5BC00811C40 /* DoneTableViewCell.swift */; };
 		B8A0EDA12A95E8B9000D3871 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EDA02A95E8B9000D3871 /* AppDelegate.swift */; };
@@ -25,6 +27,7 @@
 		B8A0EE282A988345000D3871 /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE272A988345000D3871 /* TodoTableViewCell.swift */; };
 		B8A0EE2A2A988BE9000D3871 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE292A988BE9000D3871 /* Extension.swift */; };
 		B8A0EE302A9E6035000D3871 /* TodoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EE2F2A9E6035000D3871 /* TodoDetailViewController.swift */; };
+		B8C80ADF2ABAD1B300F0755C /* PictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C80ADE2ABAD1B300F0755C /* PictureCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B8031FC22AB47F1B006BECFF /* ProfileDesignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDesignViewController.swift; sourceTree = "<group>"; };
 		B84501C52A9FA01800811C40 /* URLData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLData.swift; sourceTree = "<group>"; };
 		B84501C72AA0B5BC00811C40 /* DoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneTableViewCell.swift; sourceTree = "<group>"; };
 		B8A0ED9D2A95E8B9000D3871 /* Mymemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mymemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +71,7 @@
 		B8A0EE272A988345000D3871 /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
 		B8A0EE292A988BE9000D3871 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		B8A0EE2F2A9E6035000D3871 /* TodoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoDetailViewController.swift; sourceTree = "<group>"; };
+		B8C80ADE2ABAD1B300F0755C /* PictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8031FC62AB485EE006BECFF /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B8031FC12AB47ED4006BECFF /* ProfileDesign */ = {
+			isa = PBXGroup;
+			children = (
+				B8031FC22AB47F1B006BECFF /* ProfileDesignViewController.swift */,
+				B8C80ADE2ABAD1B300F0755C /* PictureCell.swift */,
+			);
+			path = ProfileDesign;
+			sourceTree = "<group>";
+		};
 		B8A0ED942A95E8B9000D3871 = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +178,7 @@
 				B8A0EE172A964DE4000D3871 /* Todo */,
 				B8A0EE182A964DF1000D3871 /* Done */,
 				B8A0EE1E2A966ADD000D3871 /* Animal */,
+				B8031FC12AB47ED4006BECFF /* ProfileDesign */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -226,6 +242,9 @@
 			dependencies = (
 			);
 			name = Mymemo;
+			packageProductDependencies = (
+				B8031FC52AB485EE006BECFF /* SnapKit */,
+			);
 			productName = Mymemo;
 			productReference = B8A0ED9D2A95E8B9000D3871 /* Mymemo.app */;
 			productType = "com.apple.product-type.application";
@@ -298,6 +317,9 @@
 				Base,
 			);
 			mainGroup = B8A0ED942A95E8B9000D3871;
+			packageReferences = (
+				B8031FC42AB485EE006BECFF /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = B8A0ED9E2A95E8B9000D3871 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -342,6 +364,7 @@
 			files = (
 				B8A0EE222A96F21A000D3871 /* DoneViewController.swift in Sources */,
 				B8A0EDA52A95E8B9000D3871 /* HomeViewController.swift in Sources */,
+				B8C80ADF2ABAD1B300F0755C /* PictureCell.swift in Sources */,
 				B8A0EE142A95F9C8000D3871 /* TodoData.swift in Sources */,
 				B8A0EE282A988345000D3871 /* TodoTableViewCell.swift in Sources */,
 				B8A0EE302A9E6035000D3871 /* TodoDetailViewController.swift in Sources */,
@@ -353,6 +376,7 @@
 				B84501C82AA0B5BC00811C40 /* DoneTableViewCell.swift in Sources */,
 				B8A0EDA32A95E8B9000D3871 /* SceneDelegate.swift in Sources */,
 				B8A0EDAB2A95E8B9000D3871 /* Mymemo.xcdatamodeld in Sources */,
+				B8031FC32AB47F1B006BECFF /* ProfileDesignViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,6 +710,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B8031FC42AB485EE006BECFF /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B8031FC52AB485EE006BECFF /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B8031FC42AB485EE006BECFF /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		B8A0EDA92A95E8B9000D3871 /* Mymemo.xcdatamodeld */ = {

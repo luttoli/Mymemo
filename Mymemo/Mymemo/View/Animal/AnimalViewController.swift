@@ -19,7 +19,6 @@ class AnimalViewController: UIViewController {
         let urlImageView = UIImageView()
         urlImageView.contentMode = .scaleAspectFit
         urlImageView.backgroundColor = .white
-        urlImageView.translatesAutoresizingMaskIntoConstraints = false
         return urlImageView
     }()
     
@@ -31,8 +30,11 @@ class AnimalViewController: UIViewController {
         self.navigationItem.rightBarButtonItem = self.rigthButton
         
         view.addSubview(urlImageView)
-        urlImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        urlImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+
+        urlImageView.snp.makeConstraints { make in
+            make.centerX.equalTo(view.safeAreaLayoutGuide)
+            make.centerY.equalTo(view.safeAreaLayoutGuide)
+        }
         
         imageUrl()
     }
