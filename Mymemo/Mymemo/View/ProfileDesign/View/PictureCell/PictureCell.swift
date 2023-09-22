@@ -31,8 +31,6 @@ class PictureCell: UICollectionViewCell {
         contentView.addSubview(pictureImage)
 
         pictureImage.snp.makeConstraints { make in
-//            make.centerX.equalTo(contentView)
-//            make.centerY.equalTo(contentView)
             make.top.equalTo(contentView)
             make.leading.equalTo(contentView)
             make.trailing.equalTo(contentView)
