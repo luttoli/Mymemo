@@ -1,11 +1,13 @@
 # Mymemo
 
 ## 구현 화면
-![profilePage](https://github.com/luttoli/Mymemo/assets/107012166/4a07a9d8-06a6-49e3-9c68-cc74a4876cae)
+<img width="279" alt="profilepage" src="https://github.com/luttoli/Mymemo/assets/107012166/e823c8de-33e4-4231-8e55-abaeab66c1d2">
 
 * userName 세로 위치는 status bar 절대 위치
-    let statusBarHeight = self.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-    make.bottom.equalTo(self.safeAreaLayoutGuide.snp.top).offset(statusBarHeight)
+```
+let statusBarHeight = self.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+make.bottom.equalTo(self.safeAreaLayoutGuide.snp.top).offset(statusBarHeight)
+```
     
 * Nav gallery 3등분: 빈 버튼 두개 추가해서 distribution = .fillEqually를 사용했습니다.
 lazy var gridButton1: UIButton = {
@@ -31,14 +33,17 @@ ProfileDesignViewController에 View 영역을 나눔 (userProfileView, MiddleBar
 ## 뒤로가기 불가
 
 * 화면 전환은 꼭 present를 사용해주세요. : Home 화면에서 해당 페이지로 넘어가는 버튼을 눌렀을 때 present, fullScreen을 사용했다.
+```
 @objc func profileButtonClicked() {
     let goProfile = ProfileDesignViewController()
     goProfile.modalPresentationStyle = .fullScreen
     present(goProfile, animated: true, completion: nil)
 }
+```
 
 - 페이지 작업을 다 하고보니 해당 화면에서 뒤로가기가 불가능했다. 그래서 화면을 내리면 이전페이지로 이동할 수 있게 구현했다.
 
+```
 func goBackGesture() {
     let swipeDownGesture = UIPanGestureRecognizer(target: self, action: #selector(swipeDown))
     self.view.addGestureRecognizer(swipeDownGesture)
@@ -64,5 +69,5 @@ func goBackGesture() {
         break
     }
 }
-
+```
 여기서 화면을 내릴 때 이전 페이지가 검은색으로 노출되는 것을 해결하지 못했다.
