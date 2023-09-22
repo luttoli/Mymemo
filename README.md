@@ -10,6 +10,7 @@ make.bottom.equalTo(self.safeAreaLayoutGuide.snp.top).offset(statusBarHeight)
 ```
     
 * Nav gallery 3등분: 빈 버튼 두개 추가해서 distribution = .fillEqually를 사용했습니다.
+```
 lazy var gridButton1: UIButton = {
     let gridButton1 = UIButton()
     return gridButton1
@@ -19,8 +20,8 @@ lazy var gridButton2: UIButton = {
     let gridButton2 = UIButton()
     return gridButton2
 }()
-
-* Nav gallery border line도 UIView를 사용해서 StackView로 위치 잡았는데 구현 목표가 맞을지 궁금합니다.
+```
+ - Nav gallery border line도 UIView를 사용해서 StackView로 위치 잡았는데 구현 목표가 맞을지 궁금합니다.
 (지금 이렇게 정리하다 보니 button의 bottom line만 줬어도 가능했을거 같기도 합니다.)
 
 ## MVVM패턴 적용해보기
