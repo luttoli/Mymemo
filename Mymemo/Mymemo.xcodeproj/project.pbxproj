@@ -11,6 +11,10 @@
 		B8031FC62AB485EE006BECFF /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B8031FC52AB485EE006BECFF /* SnapKit */; };
 		B84501C62A9FA01800811C40 /* URLData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84501C52A9FA01800811C40 /* URLData.swift */; };
 		B84501C82AA0B5BC00811C40 /* DoneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84501C72AA0B5BC00811C40 /* DoneTableViewCell.swift */; };
+		B86E6DC12ABD4AA200B13B85 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E6DC02ABD4AA200B13B85 /* UserModel.swift */; };
+		B86E6DC32ABD4AA900B13B85 /* UserProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E6DC22ABD4AA900B13B85 /* UserProfileViewModel.swift */; };
+		B86E6DC52ABD4AB400B13B85 /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E6DC42ABD4AB400B13B85 /* UserProfileView.swift */; };
+		B86E6DC72ABD4AB900B13B85 /* MiddleBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86E6DC62ABD4AB900B13B85 /* MiddleBarView.swift */; };
 		B8A0EDA12A95E8B9000D3871 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EDA02A95E8B9000D3871 /* AppDelegate.swift */; };
 		B8A0EDA32A95E8B9000D3871 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EDA22A95E8B9000D3871 /* SceneDelegate.swift */; };
 		B8A0EDA52A95E8B9000D3871 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A0EDA42A95E8B9000D3871 /* HomeViewController.swift */; };
@@ -51,6 +55,10 @@
 		B8031FC22AB47F1B006BECFF /* ProfileDesignViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDesignViewController.swift; sourceTree = "<group>"; };
 		B84501C52A9FA01800811C40 /* URLData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLData.swift; sourceTree = "<group>"; };
 		B84501C72AA0B5BC00811C40 /* DoneTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoneTableViewCell.swift; sourceTree = "<group>"; };
+		B86E6DC02ABD4AA200B13B85 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		B86E6DC22ABD4AA900B13B85 /* UserProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileViewModel.swift; sourceTree = "<group>"; };
+		B86E6DC42ABD4AB400B13B85 /* UserProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		B86E6DC62ABD4AB900B13B85 /* MiddleBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MiddleBarView.swift; sourceTree = "<group>"; };
 		B8A0ED9D2A95E8B9000D3871 /* Mymemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mymemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A0EDA02A95E8B9000D3871 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8A0EDA22A95E8B9000D3871 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,10 +111,62 @@
 		B8031FC12AB47ED4006BECFF /* ProfileDesign */ = {
 			isa = PBXGroup;
 			children = (
-				B8031FC22AB47F1B006BECFF /* ProfileDesignViewController.swift */,
-				B8C80ADE2ABAD1B300F0755C /* PictureCell.swift */,
+				B86E6DBE2ABD4A6D00B13B85 /* Model */,
+				B86E6DBF2ABD4A7900B13B85 /* ViewModel */,
+				B86E6DBD2ABD4A5C00B13B85 /* View */,
 			);
 			path = ProfileDesign;
+			sourceTree = "<group>";
+		};
+		B86E6DBA2ABD4A3F00B13B85 /* PictureCell */ = {
+			isa = PBXGroup;
+			children = (
+				B8C80ADE2ABAD1B300F0755C /* PictureCell.swift */,
+			);
+			path = PictureCell;
+			sourceTree = "<group>";
+		};
+		B86E6DBB2ABD4A4A00B13B85 /* MiddleBarView */ = {
+			isa = PBXGroup;
+			children = (
+				B86E6DC62ABD4AB900B13B85 /* MiddleBarView.swift */,
+			);
+			path = MiddleBarView;
+			sourceTree = "<group>";
+		};
+		B86E6DBC2ABD4A5100B13B85 /* UserInfoView */ = {
+			isa = PBXGroup;
+			children = (
+				B86E6DC42ABD4AB400B13B85 /* UserProfileView.swift */,
+			);
+			path = UserInfoView;
+			sourceTree = "<group>";
+		};
+		B86E6DBD2ABD4A5C00B13B85 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B8031FC22AB47F1B006BECFF /* ProfileDesignViewController.swift */,
+				B86E6DBC2ABD4A5100B13B85 /* UserInfoView */,
+				B86E6DBB2ABD4A4A00B13B85 /* MiddleBarView */,
+				B86E6DBA2ABD4A3F00B13B85 /* PictureCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B86E6DBE2ABD4A6D00B13B85 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B86E6DC02ABD4AA200B13B85 /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B86E6DBF2ABD4A7900B13B85 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B86E6DC22ABD4AA900B13B85 /* UserProfileViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		B8A0ED942A95E8B9000D3871 = {
@@ -363,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8A0EE222A96F21A000D3871 /* DoneViewController.swift in Sources */,
+				B86E6DC52ABD4AB400B13B85 /* UserProfileView.swift in Sources */,
 				B8A0EDA52A95E8B9000D3871 /* HomeViewController.swift in Sources */,
 				B8C80ADF2ABAD1B300F0755C /* PictureCell.swift in Sources */,
 				B8A0EE142A95F9C8000D3871 /* TodoData.swift in Sources */,
@@ -372,10 +433,13 @@
 				B8A0EE2A2A988BE9000D3871 /* Extension.swift in Sources */,
 				B8A0EE242A96F224000D3871 /* AnimalViewController.swift in Sources */,
 				B8A0EDA12A95E8B9000D3871 /* AppDelegate.swift in Sources */,
+				B86E6DC12ABD4AA200B13B85 /* UserModel.swift in Sources */,
 				B84501C62A9FA01800811C40 /* URLData.swift in Sources */,
 				B84501C82AA0B5BC00811C40 /* DoneTableViewCell.swift in Sources */,
 				B8A0EDA32A95E8B9000D3871 /* SceneDelegate.swift in Sources */,
 				B8A0EDAB2A95E8B9000D3871 /* Mymemo.xcdatamodeld in Sources */,
+				B86E6DC32ABD4AA900B13B85 /* UserProfileViewModel.swift in Sources */,
+				B86E6DC72ABD4AB900B13B85 /* MiddleBarView.swift in Sources */,
 				B8031FC32AB47F1B006BECFF /* ProfileDesignViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
