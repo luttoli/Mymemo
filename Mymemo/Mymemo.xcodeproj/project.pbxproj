@@ -134,19 +134,19 @@
 			path = MiddleBarView;
 			sourceTree = "<group>";
 		};
-		B86E6DBC2ABD4A5100B13B85 /* UserInfoView */ = {
+		B86E6DBC2ABD4A5100B13B85 /* UserProfileView */ = {
 			isa = PBXGroup;
 			children = (
 				B86E6DC42ABD4AB400B13B85 /* UserProfileView.swift */,
 			);
-			path = UserInfoView;
+			path = UserProfileView;
 			sourceTree = "<group>";
 		};
 		B86E6DBD2ABD4A5C00B13B85 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				B8031FC22AB47F1B006BECFF /* ProfileDesignViewController.swift */,
-				B86E6DBC2ABD4A5100B13B85 /* UserInfoView */,
+				B86E6DBC2ABD4A5100B13B85 /* UserProfileView */,
 				B86E6DBB2ABD4A4A00B13B85 /* MiddleBarView */,
 				B86E6DBA2ABD4A3F00B13B85 /* PictureCell */,
 			);
